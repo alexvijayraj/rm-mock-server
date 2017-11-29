@@ -26,4 +26,5 @@ api.add_resource(GetRide, '/get_ride/<string:uid>')
 api.add_resource(UpdateRideStatus, '/update_ride_status')
 api.add_resource(UpdateRideRatings, '/update_ride_ratings')
 
-app.run(port = 5000, debug=True)
+if __name__ == '__main__':
+    app.run(port = 5000, debug=True)
