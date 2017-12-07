@@ -7,14 +7,15 @@ class User(Resource):
     def post(self):
         data = request.get_json()
         user = { 'uid': 'd290f1ee-6c54-4b01-90e6-d701748f0851',
-                 'first name' : data['first name'],
-                 'last name' : data['last name'],
+                 'first_name' : data['first_name'],
+                 'last_name' : data['last_name'],
                  'email' : data['email'],
                  'mobile' : data['mobile'],
                  'source' : data['source'],
-                 'source uid' : data['source uid'],
-                 'User type' : data['User type'],
-                 'vehicle uid' : data['vehicle uid']
+                 'source_uid' : data['source_uid'],
+                 'user_type' : data['user_type'],
+                 'rating' : data['rating'],
+                 'vehicle_uid' : data['vehicle_uid']
                }
         users.append(user)
         return {'status': 'success','uid': 'd290f1ee-6c54-4b01-90e6-d701748f0851'}, 201
@@ -31,14 +32,15 @@ class UpdateUser(Resource):
         data = request.get_json()
         for user in users:
             if user['uid'] == data['uid']:
-                user['first name'] = data['first name']
-                user['last name'] = data['last name']
+                user['first_name'] = data['first_name']
+                user['last_name'] = data['last_name']
                 user['email'] = data['email']
                 user['mobile'] = data['mobile']
                 user['source'] = data['source']
-                user['source uid'] = data['source uid']
-                user['User type'] = data['User type']
-                user['vehicle uid'] = data['vehicle uid']
+                user['source_uid'] = data['source_uid']
+                user['user_type'] = data['user_type']
+                user['rating'] = data['rating']
+                user['vehicle_uid'] = data['vehicle_uid']
 
                 return {'status': 'success','uid': 'd290f1ee-6c54-4b01-90e6-d701748f0851'}, 201
         return {'user': None}, 404

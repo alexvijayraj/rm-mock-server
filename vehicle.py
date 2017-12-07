@@ -7,10 +7,10 @@ class Vehicle(Resource):
     def post(self):
         data = request.get_json()
         vehicle = { 'uid': 'd290f1ee-6c54-4b01-90e6-d701748f0851',
-                 'User uid': data['User uid'],
-                 'Vehicle type' : data['Vehicle type'],
+                 'user_uid': data['user_uid'],
+                 'vehicle_type' : data['vehicle_type'],
                  'seats' : data['seats'],
-                 'Reg number' : data['Reg number'],
+                 'reg_number' : data['reg_number'],
                  'fare' : data['fare']
                }
         vehicles.append(vehicle)
@@ -28,10 +28,10 @@ class UpdateVehicle(Resource):
         data = request.get_json()
         for vehicle in vehicles:
             if vehicle['uid'] == data['uid']:
-                vehicle['User uid'] = data['User uid']
-                vehicle['Vehicle type'] = data['Vehicle type']
+                vehicle['user_uid'] = data['user_uid']
+                vehicle['vehicle_type'] = data['vehicle_type']
                 vehicle['seats'] = data['seats']
-                vehicle['Reg number'] = data['Reg number']
+                vehicle['reg_number'] = data['reg_number']
                 vehicle['fare'] = data['fare']
 
                 return {'status': 'success','uid': 'd290f1ee-6c54-4b01-90e6-d701748f0851'}, 201

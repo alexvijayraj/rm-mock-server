@@ -7,14 +7,14 @@ class RequestRide(Resource):
     def post(self):
         data = request.get_json()
         ride = { 'uid': 'd290f1ee-6c54-4b01-90e6-d701748f0851',
-                 'Driver uid': data['Driver uid'],
-                 'Rider uid': data['Rider uid'],
-                 'Ride location' : data['Ride location'],
-                 'Ride time' : data['Ride time'],
-                 'Ride cost' : data['Ride cost'],
-                 'Ride ratings' : data['Ride ratings'],
-                 'vehicle uid' : data['vehicle uid'],
-                 'Ride status' : data['Ride status']
+                 'driver_uid': data['driver_uid'],
+                 'rider_uid': data['rider_uid'],
+                 'ride_location' : data['ride_location'],
+                 'ride_time' : data['ride_time'],
+                 'ride_cost' : data['ride_cost'],
+                 'ride_ratings' : data['ride_ratings'],
+                 'vehicle_uid' : data['vehicle_uid'],
+                 'ride_status' : data['ride_status']
                }
         rides.append(ride)
         return {'status': 'success','uid': 'd290f1ee-6c54-4b01-90e6-d701748f0851'}, 201
@@ -23,14 +23,14 @@ class PostRide(Resource):
     def post(self):
         data = request.get_json()
         ride = { 'uid': 'd290f1ee-6c54-4b01-90e6-d701748f0851',
-                 'Driver uid': data['Driver uid'],
-                 'Rider uid': data['Rider uid'],
-                 'Ride location' : data['Ride location'],
-                 'Ride time' : data['Ride time'],
-                 'Ride cost' : data['Ride cost'],
-                 'Ride ratings' : data['Ride ratings'],
-                 'vehicle uid' : data['vehicle uid'],
-                 'Ride status' : data['Ride status']
+                 'driver_uid': data['driver_uid'],
+                 'rider_uid': data['rider_uid'],
+                 'ride_location' : data['ride_location'],
+                 'ride_time' : data['ride_time'],
+                 'ride_cost' : data['ride_cost'],
+                 'ride_ratings' : data['ride_ratings'],
+                 'vehicle_uid' : data['vehicle_uid'],
+                 'ride_status' : data['ride_status']
                }
         rides.append(ride)
         return {'status': 'success','uid': 'd290f1ee-6c54-4b01-90e6-d701748f0851'}, 201
@@ -47,7 +47,7 @@ class UpdateRideStatus(Resource):
         data = request.get_json()
         for ride in rides:
             if ride['uid'] == data['uid']:
-                ride['Ride status'] = data['Ride status']
+                ride['ride_status'] = data['ride_status']
 
                 return {'status': 'success','uid': 'd290f1ee-6c54-4b01-90e6-d701748f0851'}, 201
         return {'user': None}, 404
@@ -57,7 +57,7 @@ class UpdateRideRatings(Resource):
         data = request.get_json()
         for ride in rides:
             if ride['uid'] == data['uid']:
-                ride['Ride ratings'] = data['Ride ratings']
+                ride['ride_ratings'] = data['ride_ratings']
 
                 return {'status': 'success','uid': 'd290f1ee-6c54-4b01-90e6-d701748f0851'}, 201
         return {'user': None}, 404
