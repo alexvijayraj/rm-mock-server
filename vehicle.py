@@ -11,7 +11,8 @@ class Vehicle(Resource):
                  'vehicle_type' : data['vehicle_type'],
                  'seats' : data['seats'],
                  'reg_number' : data['reg_number'],
-                 'fare' : data['fare']
+                 'fare' : data['fare'],
+                 'vehicle_status' : data['vehicle_status']
                }
         vehicles.append(vehicle)
         return {'status': 'success','uid': 'd290f1ee-6c54-4b01-90e6-d701748f0851'}, 201
@@ -33,6 +34,7 @@ class UpdateVehicle(Resource):
                 vehicle['seats'] = data['seats']
                 vehicle['reg_number'] = data['reg_number']
                 vehicle['fare'] = data['fare']
+                vehicle['vehicle_status'] = data['vehicle_status']
 
                 return {'status': 'success','uid': 'd290f1ee-6c54-4b01-90e6-d701748f0851'}, 201
         return {'vehicle': None}, 404

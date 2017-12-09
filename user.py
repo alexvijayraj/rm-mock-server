@@ -15,7 +15,8 @@ class User(Resource):
                  'source_uid' : data['source_uid'],
                  'user_type' : data['user_type'],
                  'rating' : data['rating'],
-                 'vehicle_uid' : data['vehicle_uid']
+                 'vehicle_uid' : data['vehicle_uid'],
+                 'user_status' : data['user_status']
                }
         users.append(user)
         return {'status': 'success','uid': 'd290f1ee-6c54-4b01-90e6-d701748f0851'}, 201
@@ -41,6 +42,7 @@ class UpdateUser(Resource):
                 user['user_type'] = data['user_type']
                 user['rating'] = data['rating']
                 user['vehicle_uid'] = data['vehicle_uid']
+                user['user_status'] = data['user_status']
 
                 return {'status': 'success','uid': 'd290f1ee-6c54-4b01-90e6-d701748f0851'}, 201
         return {'user': None}, 404
